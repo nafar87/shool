@@ -1,0 +1,158 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 24px;
+    background-image: url("../img/Layer 10 copy 4.png");
+    background-position: 0 0;
+    background-repeat: repeat;
+    min-width: 1200px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #000;
+}
+h1 {
+    font-size: 30px;
+    line-height: 42px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.btn {
+    font: inherit;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 10px 0px;
+    min-width: 140px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background: #808080;
+}
+
+.nav_site {
+    line-height: 20px;
+    height: 72px
+}
+
+.nav_user {
+    font-size: 16px;
+}
+
+.nav_list {
+    font-size: 16px;
+    color: #fff;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 630px;
+    font-weight: 900;
+}
+
+.nav_site a:hover,
+.nav_site a:focus {
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #808080;
+}
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.breadcrumbs_list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.breadcrumbs_item {
+    margin-right: 15px;
+}
+.layer {
+    background-color: #a9a9a9;
+    background-image: url("../img/Layer 23.png");
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+.footer {
+    color: #fff;
+    display: flex;
+    margin-top: 65px
+}
+
+.address {
+    width: 320px;
+    margin-right: 80px;
+}
+
+.socials {
+    width: 150px;
+    text-align: center;
+    margin-right: auto;
+}
+
+.social_list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.vk {
+    flex-grow: 1;
+}
+
+.fb {
+    flex-grow: 1;
+}
+
+.inst {
+    flex-grow: 1;
+}
+
+.copyright {
+    width: 150px;
+    text-align: center;
+}
+
+.copyrighter_link:hover,
+.copyrighter_link:focus {
+    color: black;
+    background-color: #fff;
+}
