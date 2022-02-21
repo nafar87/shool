@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -13,6 +23,11 @@ body {
     line-height: 24px;
     background: #000 url("../img/Layer.jpg") no-repeat top center;
     max-width: 2560px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -40,7 +55,7 @@ h3 {
 
 }
 
-.btn {
+.btn  {
     font: inherit;
     text-transform: uppercase;
     background-color: #000;
@@ -52,14 +67,76 @@ h3 {
     min-width: 140px;
 }
 
+.btn_map {
+    font: inherit;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 10px 0px;
+    min-width: 140px;
+
+}
+
+.login_btn {
+    font: inherit;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 10px 0px;
+    min-width: 140px;
+    margin-right: 18px;
+
+}
+
+.btn_user{
+    position: relative;
+}
+
+.btn_user::before {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 17px;
+    top: 12px;
+    right: 101px;
+    background-image: url("../img/item img/login.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
 .btn:hover,
 .btn:focus,
-.btn:active {
+.login_btn:hover,
+.login_btn:focus,
+.btn_map:hover,
+.btn_map:focus,
+.btn_close:hover,
+.btn_close:focus {
     background: #808080;
 }
 
-.title {
-    display: none;
+.btn_form {
+    font: inherit;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 10px 0px;
+    margin-top: 10px;
+    width: 302px;
+}
+
+.btn_form:hover,
+.btn_form:focus {
+    background: #808080;
 }
 
 input {
@@ -88,15 +165,18 @@ input {
     justify-content: space-between;
 
 }
+
 .flex_box {
     display: flex;
     flex-grow: 1;
 }
+
 .flex_box2 {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
 }
+
 .nav_user {
     list-style: none;
 }
@@ -121,34 +201,53 @@ input {
     margin: auto;
     margin-bottom: 35px;
 }
+
 .advantages_title {
     display: none;
 }
 
 .advantages_list {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    padding-inline-start: 0px;
+    margin: 0;
     list-style: none;
     display: flex;
-    margin-left: 0;
-    margin-right: 0;
     text-align: center;
+    justify-content: space-between;
 }
+
+.advantages_list h3 {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+.advantages_list h3::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    bottom: -36px;
+    left: 46%;
+    transform: rotate(45deg);
+}
+
 .advantages_list_item {
-    margin: 10px;
+    padding: 10px;
+    width: 290px;
 }
+
 .columns {
     background-color: #fff;
     color: #000;
-    background-image: url("../img/Layer 10 copy 4.png");
-    background-position: 0 0;
-    background-repeat: repeat;
+    background-image: url("../img/line.png"), url("../img/Layer 10 copy 4.png");
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
     display: flex;
     width: 940px;
     height: 420px;
     margin: 0 auto 35px;
 }
+
 .section_news {
     padding: 16px 80px;
     width: 50%;
@@ -159,7 +258,7 @@ input {
     width: 50%;
 }
 
-.figure{
+.figure {
     text-align: left;
     margin: 0;
 }
@@ -179,19 +278,40 @@ input {
 }
 
 .user_form {
-    padding: 16px 70px;
+    padding: 16px 58px 16px 86px;
     width: 50%;
 }
 
 .time {
     text-transform: none;
+    display: block;
+}
+
+.form_title {
+    margin-bottom: 0px;
 }
 
 .user_form input {
-    margin: 4px;
+    margin-bottom: 12px;
     font: inherit;
     background: transparent;
     border: 2px solid #000;
+}
+
+.form_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form_label {
+    margin-left: 17px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input_form {
+
+    margin-right: 23px;
 }
 
 .user_form input:focus,
@@ -203,12 +323,14 @@ input {
     border: 4px solid #fff;
     background-color: #808080;
 }
+
 .layer {
     background-color: #a9a9a9;
     background-image: url("../img/Layer 23.png");
     background-position: 0 0;
     background-repeat: repeat;
 }
+
 .footer {
     display: flex;
     margin-top: 65px
@@ -231,20 +353,12 @@ input {
     display: flex;
 }
 
-.vk {
-    flex-grow: 1;
-}
-
-.fb {
-    flex-grow: 1;
-}
-
-.inst {
+.social-icon {
     flex-grow: 1;
 }
 
 .copyright {
-    width: 150px;
+    width: 100px;
     text-align: center;
 }
 
@@ -286,35 +400,199 @@ input {
 }
 
 .map {
+    display: none;
+    width: 900px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font: inherit;
     color: black;
     background-color: #fff;
     background-image: url("../img/Layer 10 copy 4.png");
     background-position: 0 0;
     background-repeat: repeat;
+    box-shadow: 25px 25px 13px 1px rgba(34, 60, 80, 0.3);
 }
+
 .modal {
+    display: none;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     padding: 10px 30px;
     width: 460px;
     height: 385px;
+    box-shadow: 15px 15px 13px 1px rgba(34, 60, 80, 0.3);
+}
+
+.modal_show {
+    display: block;
 }
 
 .modal_flex {
+    margin: auto;
     display: flex;
     width: 300px;
     justify-content: space-between;
     align-items: baseline;
 }
-#remember {
-    width: auto;
-    height: auto;
-    margin-left: 25px;
+
+.modal_flex label {
+    margin-right: 72px;
 }
 
-#Login{
+.remember_chekbox {
+    width: auto;
+    height: auto;
+    margin-right: 25px;
+}
+
+#Login {
     width: 300px;
 }
 
 #password {
     width: 300px;
+}
+
+.btn_close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    width: 22px;
+    height: 22px;
+    border: 0px;
+    background: transparent;
+}
+
+.btn_close::before,
+.btn_close::after {
+    position: absolute;
+    content: " ";
+    top: 10px;
+    left: 2px;
+    width: 19px;
+    height: 3px;
+    background: #d4cfcf;
+    display: block;
+}
+
+.btn_close::before {
+    transform: rotate(45deg);
+}
+
+.btn_close::after {
+    transform: rotate(-45deg);
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .nav_list {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .nav_user {
+        margin: auto;
+        padding: 0;
+    }
+
+    .advantages {
+        max-width: 100%;
+    }
+
+    .advantages_list {
+        flex-wrap: wrap;
+        max-width: 100%;
+        justify-content: space-around;
+    }
+
+    .advantages_list_item {
+        max-width: 100%;
+    }
+
+    .columns {
+        flex-wrap: wrap;
+
+        width: 100%;
+        height: auto;
+        background-image: none;
+        padding-bottom: 30px;
+    }
+
+    .section_news {
+        padding: 16px 25px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+
+    .gallery {
+        padding: 16px 25px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        width: auto
+    }
+
+    .contact {
+        padding: 16px 38px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+
+    .user_form {
+        padding: 16px 25px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        margin-top: 0;
+        justify-content: space-around;
+    }
+
+    .address {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .socials {
+        width: 100%;
+        margin: 0;
+    }
+
+    .social_list {
+        max-width: 150px;
+        margin: auto;
+    }
+
+    .copyright {
+        width: 100%;
+        margin: 0;
+    }
+
+    .mobile {
+        color: black;
+        background: white;
+    }
 }

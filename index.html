@@ -16,6 +16,7 @@
     <nav class="nav_site container">
         <div class="flex">
             <ul class="nav_list">
+
                 <li><a href="#">информация</a></li>
                 <li><a href="#">новости</a></li>
                 <li><a href="#">прайс-лист</a></li>
@@ -25,16 +26,26 @@
             <ul class="nav_user">
                 <li class="nav_item">
                     <a href="#">
-                        <button class="btn" type="button">вход</button>
+                        <button class="btn btn_user mobile" type="button">вход</button>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
+    <script>
+        var link=document.querySelector(".btn_user");
+
+        link.addEventListener("click", function (evt) {
+            evt.preventDefault()
+            console.log("Клик")
+            var modal=document.querySelector(".modal");
+            modal.classList.add("modal_show");
+        });
+    </script>
 </header>
 
 <main class="main container">
-    <h1 class="title">Барбершоп Бородинсикий</h1>
+    <h1 class="title visually-hidden">Барбершоп Бородинсикий</h1>
     <a class="img_logo" href="#"><img class="img_logo" src="img/logo.png" width="370" height="153" alt="логотип"></a>
     <section class="advantages">
         <h2 class="advantages_title">преимущества</h2>
@@ -92,7 +103,7 @@
                 +7 (495) 666-02-66
             </p>
             <p class="work_time">ВРЕМЯ РАБОТЫ: <br>ПН—ПТ: С 10:00 ДО 22:00 <br>СБ—ВС: С 10:00 ДО 19:00</p>
-            <button class="btn" type="button">как проехать</button>
+            <button class="btn_map" type="button">как проехать</button>
             <button class="btn" type="button">Обратная связь</button>
         </div>
         <div class="user_form">
@@ -101,23 +112,23 @@
                 С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</p>
             <form class="form_content" action="https://echo.htmlacademy.ru" method="post">
                 <div>
-                    <label for="sign_data">Дата</label>
-                    <input id="sign_data" type="date" value="2018-02-18" name="data">
+                    <label class="form_label" for="sign_data">Дата</label>
+                    <input class="input_form" id="sign_data" type="date" value="2018-02-18" name="data">
                 </div>
                 <div>
-                    <label for="sign_time">Время</label>
-                    <input id="sign_time" type="time" value="10:00" name="time">
+                    <label class="form_label" for="sign_time">Время</label>
+                    <input class="input_form" id="sign_time" type="time" value="10:00" name="time">
                 </div>
                 <div>
-                    <label for="sign_name">Ваше имя</label>
-                    <input id="sign_name" type="text" placeholder="Борода" name="name" required>
+                    <label class="form_label" for="sign_name">Ваше имя</label>
+                    <input class="input_form" id="sign_name" type="text" placeholder="Борода" name="name" required>
                 </div>
                 <div>
-                    <label for="sign_tel">Телефон</label>
-                    <input id="sign_tel" type="tel" placeholder="8960-468-6131" name="tel"
+                    <label class="form_label" for="sign_tel">Телефон</label>
+                    <input class="input_form" id="sign_tel" type="tel" placeholder="8960-468-6131" name="tel"
                            required pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}">
                 </div>
-                <button class="btn">Отправить</button>
+                <button class="btn_form">Отправить</button>
             </form>
         </div>
     </section>
@@ -134,9 +145,28 @@
             <p class="social_title">давайте дружить!</p>
             <div class="socials_flex">
                 <ul class="social_list">
-                    <li class="vk"><a href="#">вконтакте</a></li>
-                    <li class="fb"><a href="#">фейсбук</a></li>
-                    <li class="inst"><a href="#">инстаграмм</a></li>
+                    <li class="social-icon"><a href="#"><span class="visually-hidden">вконтакте</span>
+                        <svg height="15"
+                             viewBox="0 0
+                                                                                                            27 15"
+                             width="27"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="m27 14.47-.09-.17c-.7146818-1.1222236-1.5907487-2.13307-2.6-3-.58-.5533333-.9466667-.9266667-1.1-1.12-.3240697-.30316656-.409578-.78364191-.21-1.18.3430288-.63453048.7519523-1.23115659 1.22-1.78l.88-1.16c1.5666667-2.08666667 2.2333333-3.42 2-4l-.1-.12c-.109136-.11062667-.2481292-.18707295-.4-.22-.2869408-.05957044-.5830592-.05957044-.87 0h-3.92c-.0883657-.02425615-.1816343-.02425615-.27 0h-.3c-.0576676.0377078-.1084094.0850668-.15.14-.0584213.07253821-.1056145.1534409-.14.24-.4080241 1.05569481-.8961112 2.078672-1.46 3.06-.3333333.56-.6433333 1.04666667-.93 1.46-.2112126.32236105-.4486863.62672877-.71.91-.1619861.16878153-.3357567.32584345-.52.47-.1533333.12-.27.17-.35.15l-.23-.05c-.1297663-.08178571-.2364764-.19538029-.31-.33-.0859744-.16512013-.1402443-.34488933-.16-.53v-4.64c.0204534-.20616061.0204534-.41383939 0-.62-.0305079-.15132639-.0774529-.29886792-.14-.44-.0578313-.13577367-.1554558-.25083118-.28-.33-.1428748-.0838966-.2981293-.14464835-.46-.18-.6073957-.07216017-1.2205654-.08221213-1.83-.03-1.0944087-.09077005-2.196173.0211014-3.25.33-.1968236.10390791-.37304132.24284882-.52.41-.16666667.2-.19.31-.07.33.4505412.0317125.8690258.24456242 1.16.59l.08.16c.0897592.20110572.1536037.41280072.19.63.0665391.32961022.1066665.66400511.12 1 .0455567.56575105.0455567 1.13424895 0 1.7-.0466667.47333333-.09.84-.13 1.1-.0273848.22118933-.0880713.43696363-.18.64-.0469539.10327383-.100394.20347393-.16.3l-.07.07c-.1177876.04655373-.2433466.07030815-.37.07-.1687085-.01661118-.3287446-.08271306-.46-.19-.20634871-.15085062-.39429851-.32537545-.56-.52-.24492747-.29153375-.46565978-.60256563-.66-.93-.24666667-.4-.5-.87333333-.76-1.42l-.22-.39c-.13333333-.25333333-.32-.62333333-.56-1.11s-.44666667-.96333333-.62-1.43c-.06139242-.17750806-.17678214-.33136102-.33-.44h-.07c-.06509465-.06382819-.13922077-.1177381-.22-.16-.09963361-.04152374-.20362013-.07171338-.31-.09l-3.73.03c-.28189953-.02624147-.56171123.0682404-.77.26l-.1.06c-.01862911.07215023-.01862911.14784977 0 .22.0046754.12708139.031758.25233842.08.37.54666667 1.29333333 1.14 2.53333333 1.78 3.72s1.19333333 2.14333333 1.66 2.87c.47333333.72666667.96666667 1.4133333 1.48 2.06s.84666667 1.06 1 1.24l.37.41.34.33c.3123289.2858618.64669704.546669 1 .78.45107532.3235871.91834796.6239767 1.4.9.5636562.3150695 1.1651687.5570187 1.79.72.6502068.1819179 1.3257966.2562328 2 .22h1.57c.268992-.0068156.525752-.1137989.72-.3l.05-.07c.0456809-.0778474.0793914-.1621237.1-.25.0166088-.1227742.0166088-.2472258 0-.37-.0114139-.3523219.0187951-.7047597.09-1.05.044287-.2459585.1216557-.4847924.23-.71.0771485-.1464485.1747994-.2811393.29-.4.0677767-.07625.1450773-.1434679.23-.2h.11c.275575-.0605488.5633217.0179275.77.21.3090603.2270562.5879675.4925222.83.79.26.3133333.57.6633333.93 1.05.3023736.3237773.6374981.6153357 1 .87l.27.16c.2241762.1273083.462458.2279908.71.3.2433527.0871589.5048209.1112415.76.07l3.48-.05c.2769653.0145297.5528758-.0441013.8-.17.1564171-.0753993.2780643-.20778.34-.37.0336715-.1514848.0336715-.3085152 0-.46-.0200841-.1232923-.0536175-.2440128-.1-.36z"
+                                  fill="#fff" transform="translate(-1 -1)"/>
+                        </svg>
+                    </a></li>
+                    <li class="social-icon"><a href="#"><span class="visually-hidden">фейсбук</span>
+                        <svg height="22" viewBox="0 0 11 22" width="11" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m3.34 2.12c.89092513-.75028796 2.02558686-1.1486645 3.19-1.12h3.61v3.81h-2.33c-.51604602-.02270182-.97463852.32650164-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87h-4.52v-10.87h-2.21v-3.65h2.19v-3.55c.05058904-.96108238.4611528-1.86789277 1.15-2.54z"
+                                  fill="#fff" transform="translate(0 -1)"/>
+                        </svg>
+                    </a></li>
+                    <li class="social-icon"><a href="#"><span class="visually-hidden">инстаграмм</span>
+                        <svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m18 0h-16c-1.1045695 0-2 .8954305-2 2v16c0 1.1045695.8954305 2 2 2h16c1.1045695 0 2-.8954305 2-2v-16c0-1.1045695-.8954305-2-2-2zm-8 6c2.209139 0 4 1.790861 4 4s-1.790861 4-4 4-4-1.790861-4-4 1.790861-4 4-4zm-7.5 12c-.13515148.008941-.26758988-.0408593-.3633653-.1366347-.09577543-.0957754-.14557567-.2282138-.1366347-.3633653v-8.5h2.1c-.08268538.32653936-.11638679.66355343-.1 1-.00000003 2.1435936 1.1435935 4.1243557 2.99999997 5.1961525 1.85640648 1.0717968 4.14359363 1.0717968 6.00000003 0 1.8564065-1.0717968 3-3.0525589 3-5.1961525.0163868-.33644657-.0173146-.67346064-.1-1h2.1v8.5c.008941.1351515-.0408593.2675899-.1366347.3633653s-.2282138.1455757-.3633653.1366347zm15.5-13.5c.008941.13515148-.0408593.26758988-.1366347.3633653-.0957754.09577543-.2282138.14557567-.3633653.1366347h-2c-.1351515.00894097-.2675899-.04085927-.3633653-.1366347-.0957754-.09577542-.1455757-.22821382-.1366347-.3633653v-2c-.008941-.13515148.0408593-.26758988.1366347-.3633653.0957754-.09577543.2282138-.14557567.3633653-.1366347h2c.1351515-.00894097.2675899.04085927.3633653.1366347.0957754.09577542.1455757.22821382.1366347.3633653z"
+                                  fill="#fff"/>
+                        </svg>
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -157,19 +187,46 @@
         </p>
         <div class="modal_flex">
             <p>
-                <label for="remember">Запомните меня</label>
-                <input id="remember" type="checkbox" checked></p>
+                <input class="remember_chekbox visually-hidden" id="remember" type="checkbox" checked></p>
+            <label class="remember_chekbox" for="remember">Запомните меня</label>
             <a class="link_remember" href="#">Я забыл пароль!</a>
         </div>
-        <button class="btn">Войти</button>
-        <button class="btn" type="button">Закрыть</button>
+        <button class="login_btn">Войти</button>
+        <button class="btn_close" type="button"></button>
     </form>
+    <script>
+        var btn_close=document.querySelector(".btn_close");
+        btn_close.addEventListener("click",function (evt) {
+            console.log("клик");
+            var modal=document.querySelector(".modal");
+            modal.classList.remove("modal_show");
+        })
+
+    </script>
 </section>
 
 <section class="map">
-    <h2 class="map_title">Как до нас добраться</h2>
-    <img class="img_map" src="img/map.jpg" width="1739" height="784" alt="map">
-    <button class="btn" type="button">Закрыть</button>
+    <h2 class="map_title visually-hidden">Как до нас добраться</h2>
+    <!--<img class="img_map" src="img/map.jpg" width="1739" height="784" alt="map">-->
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aytk5IHw9E8E15hmKZ2VHi4-ETghioUwd&amp;width=900&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
+    <button class="btn_close btn_close_map" type="button">Закрыть</button>
 </section>
+<script>
+    var btn_map=document.querySelector(".btn_map");
+    btn_map.addEventListener("click",function (evt) {
+        console.log("open map");
+        var modal_map=document.querySelector(".map");
+        modal_map.classList.add("modal_show");
+
+    })
+    var btn_close_map=document.querySelector(".btn_close_map");
+    btn_close_map.addEventListener("click",function (evt) {
+        console.log("клик");
+        var modal_map=document.querySelector(".map");
+        modal_map.classList.remove("modal_show");
+    })
+
+</script>
+
 </body>
 </html>

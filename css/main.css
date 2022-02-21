@@ -104,6 +104,11 @@ h3 {
 .breadcrumbs_item {
     margin-right: 15px;
 }
+
+.breadcrumbs_item_final {
+    opacity: 0.5;
+}
+
 .layer {
     background-color: #a9a9a9;
     background-image: url("../img/Layer 23.png");
@@ -114,7 +119,7 @@ h3 {
 .footer {
     color: #fff;
     display: flex;
-    margin-top: 65px
+    margin-top: 45px;
 }
 
 .address {
@@ -134,20 +139,12 @@ h3 {
     display: flex;
 }
 
-.vk {
-    flex-grow: 1;
-}
-
-.fb {
-    flex-grow: 1;
-}
-
-.inst {
+.social-icon {
     flex-grow: 1;
 }
 
 .copyright {
-    width: 150px;
+    width: 100px;
     text-align: center;
 }
 
@@ -155,4 +152,8 @@ h3 {
 .copyrighter_link:focus {
     color: black;
     background-color: #fff;
+}
+
+img {
+    max-width: 100%;
 }
