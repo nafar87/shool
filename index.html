@@ -32,16 +32,6 @@
             </ul>
         </div>
     </nav>
-    <script>
-        var link=document.querySelector(".btn_user");
-
-        link.addEventListener("click", function (evt) {
-            evt.preventDefault()
-            console.log("Клик")
-            var modal=document.querySelector(".modal");
-            modal.classList.add("modal_show");
-        });
-    </script>
 </header>
 
 <main class="main container">
@@ -180,10 +170,10 @@
     <p class="text_login">ВВедите пожалуйста свой логин и пароль</p>
     <form class="login_form" action="https://echo.htmlacademy.ru" method="post">
         <p>
-            <input id="Login" type="text" placeholder="Логин" name="login">
+            <input id="Login" type="text" placeholder="Логин" name="login" >
         </p>
         <p>
-            <input id="password" type="password" placeholder="Пароль" name="password">
+            <input id="password" type="password" placeholder="Пароль" name="password" >
         </p>
         <div class="modal_flex">
             <p>
@@ -192,17 +182,10 @@
             <a class="link_remember" href="#">Я забыл пароль!</a>
         </div>
         <button class="login_btn">Войти</button>
+        <p class="error_massage">Введите логин и пароль</p>
         <button class="btn_close" type="button"></button>
     </form>
-    <script>
-        var btn_close=document.querySelector(".btn_close");
-        btn_close.addEventListener("click",function (evt) {
-            console.log("клик");
-            var modal=document.querySelector(".modal");
-            modal.classList.remove("modal_show");
-        })
 
-    </script>
 </section>
 
 <section class="map">
@@ -211,22 +194,6 @@
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aytk5IHw9E8E15hmKZ2VHi4-ETghioUwd&amp;width=900&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
     <button class="btn_close btn_close_map" type="button">Закрыть</button>
 </section>
-<script>
-    var btn_map=document.querySelector(".btn_map");
-    btn_map.addEventListener("click",function (evt) {
-        console.log("open map");
-        var modal_map=document.querySelector(".map");
-        modal_map.classList.add("modal_show");
-
-    })
-    var btn_close_map=document.querySelector(".btn_close_map");
-    btn_close_map.addEventListener("click",function (evt) {
-        console.log("клик");
-        var modal_map=document.querySelector(".map");
-        modal_map.classList.remove("modal_show");
-    })
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

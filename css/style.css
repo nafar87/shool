@@ -90,7 +90,6 @@ h3 {
     border: none;
     padding: 10px 0px;
     min-width: 140px;
-    margin-right: 18px;
 
 }
 
@@ -490,6 +489,21 @@ input {
 
 img {
     max-width: 100%;
+}
+
+.error_massage {
+    color: #ff0000;
+    text-transform: none;
+    font-size: 12px;
+    display: none;
+}
+
+.error_massage.modal_show {
+    display: block;
+}
+
+.login_form .input_error {
+    border: 2px solid red;
 }
 
 @media (max-width: 767px) {
